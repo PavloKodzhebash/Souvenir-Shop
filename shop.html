@@ -2,88 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museum Souvenir Shop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
+        <h1>Museum Souvenir Shop</h1>
         <nav>
-            <a href="index.html">Home</a>
             <a href="collections.html">Collections</a>
             <a href="shop.html" class="active">Shop</a>
+            <a href="index.html">Home</a>
         </nav>
-        <h1>Museum Souvenir Shop</h1>
     </header>
 
     <main>
-        <p>Welcome to our museum souvenir shop! Browse our curated collection of artifacts and replicas. Each item is inspired by our Archeology and Anthropology collections.</p>
+        <section class="shop-container">
 
-        <div class="shop-container">
-            <!-- Souvenir Item 1 -->
+            <!-- Archeology Items -->
             <div class="souvenir-item">
-                <img src="Archeology/The_serent_dagger.png" alt="Serpent Dagger Replica" title="Replica of the Serpent Dagger" onclick="openModal(this)">
-                <h3>Serpent Dagger</h3>
-                <p>Collection: Archeology | Material: Obsidian | Found: Ancient Temple | Purpose: Ritual</p>
-                <p class="price">$149.99</p>
+                <img src="Archeology/The serent daggre.png" alt="Serpent Dagger" class="product-image" onclick="openModal(this)">
+                <h2>Serpent Dagger</h2>
+                <p>Obsidian blade with a cobra-shaped handle inlaid with emeralds. From Archeology collection. Used for ritual purposes.</p>
+                <span class="price">$120.00</span>
                 <button onclick="addToCart('Serpent Dagger')">Add Serpent Dagger to Cart</button>
             </div>
 
-            <!-- Souvenir Item 2 -->
             <div class="souvenir-item">
-                <img src="Archeology/knife.png" alt="Ancient Knife Replica" title="Replica of Ancient Knife" onclick="openModal(this)">
-                <h3>Ancient Knife</h3>
-                <p>Collection: Archeology | Material: Bronze | Found: Coastal Excavation | Purpose: Navigation Tool</p>
-                <p class="price">$129.99</p>
+                <img src="Archeology/knife.png" alt="Ancient Knife" class="product-image" onclick="openModal(this)">
+                <h2>Ancient Knife</h2>
+                <p>Bronze knife used in daily and ceremonial life. From Archeology collection.</p>
+                <span class="price">$85.50</span>
                 <button onclick="addToCart('Ancient Knife')">Add Ancient Knife to Cart</button>
             </div>
 
-            <!-- Souvenir Item 3 -->
             <div class="souvenir-item">
-                <img src="Archeology/vase.png" alt="Peace Vase Replica" title="Replica of Peace Vase" onclick="openModal(this)">
-                <h3>Peace Vase</h3>
-                <p>Collection: Archeology | Material: Terracotta | Found: Ancient Settlement | Purpose: Ceremonial</p>
-                <p class="price">$99.99</p>
-                <button onclick="addToCart('Peace Vase')">Add Peace Vase to Cart</button>
+                <img src="Archeology/vase.png" alt="Peace Urn" class="product-image" onclick="openModal(this)">
+                <h2>Peace Urn</h2>
+                <p>Terracotta vase with painted scene of historic leaders' meeting. Fragile and ancient. Archeology collection.</p>
+                <span class="price">$95.00</span>
+                <button onclick="addToCart('Peace Urn')">Add Peace Urn to Cart</button>
             </div>
 
-            <!-- Souvenir Item 4 -->
+            <!-- Anthropology Items -->
             <div class="souvenir-item">
-                <img src="Anthropology/backpack.png" alt="Nomad Backpack" title="Nomad Backpack Replica" onclick="openModal(this)">
-                <h3>Nomad Backpack</h3>
-                <p>Collection: Anthropology | Material: Fabric & Leather | Found: Modern Cultural Study | Purpose: Daily Life</p>
-                <p class="price">$79.99</p>
-                <button onclick="addToCart('Nomad Backpack')">Add Nomad Backpack to Cart</button>
+                <img src="Anthropology/backpack.png" alt="Urban Nomad Backpack" class="product-image" onclick="openModal(this)">
+                <h2>Urban Nomad Backpack</h2>
+                <p>Modern anthropological artifact with patches, camera, and passport. Shows human migration in 21st century.</p>
+                <span class="price">$60.00</span>
+                <button onclick="addToCart('Urban Nomad Backpack')">Add Urban Nomad Backpack to Cart</button>
             </div>
 
-            <!-- Souvenir Item 5 -->
             <div class="souvenir-item">
-                <img src="Anthropology/map.png" alt="Genealogy Map" title="Replica of Genealogy Map" onclick="openModal(this)">
-                <h3>Genealogy Map</h3>
-                <p>Collection: Anthropology | Material: Parchment | Found: Tribal Archives | Purpose: Clan Navigation</p>
-                <p class="price">$89.99</p>
+                <img src="Anthropology/map.png" alt="Genealogy Map" class="product-image" onclick="openModal(this)">
+                <h2>Genealogy Map</h2>
+                <p>Ancient parchment showing clan connections and sacred territories. Anthropology collection.</p>
+                <span class="price">$75.00</span>
                 <button onclick="addToCart('Genealogy Map')">Add Genealogy Map to Cart</button>
             </div>
 
-            <!-- Souvenir Item 6 -->
             <div class="souvenir-item">
-                <img src="Anthropology/mask.png" alt="Spirit Mask" title="Replica of Spirit Mask" onclick="openModal(this)">
-                <h3>Spirit Mask</h3>
-                <p>Collection: Anthropology | Material: Feathers & Shells | Found: Equatorial Tribe | Purpose: Ritual</p>
-                <p class="price">$109.99</p>
-                <button onclick="addToCart('Spirit Mask')">Add Spirit Mask to Cart</button>
+                <img src="Anthropology/mask.png" alt="Guardian Spirit Mask" class="product-image" onclick="openModal(this)">
+                <h2>Guardian Spirit Mask</h2>
+                <p>Elaborate headdress of feathers, shells, and wood. Used in initiation rituals. Anthropology collection.</p>
+                <span class="price">$110.00</span>
+                <button onclick="addToCart('Guardian Spirit Mask')">Add Guardian Spirit Mask to Cart</button>
             </div>
-        </div>
+
+        </section>
     </main>
 
     <!-- Modal -->
-    <div id="modal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
         <img class="modal-content" id="modal-img">
-        <div id="modal-caption"></div>
+        <div id="caption"></div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
