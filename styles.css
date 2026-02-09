@@ -1,139 +1,212 @@
-/* Global Styles */
+/* General Body Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
     margin: 0;
-    background: #f0f4f8; /* светлый, мягкий фон */
     color: #333;
 }
 
 /* Header */
 header {
-    background: linear-gradient(90deg, #4a90e2, #50c2e9);
-    color: white;
-    padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 50px 20px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2rem;
+    margin: 0 0 15px;
+    font-size: 3em;
     letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 }
 
+header p {
+    max-width: 900px;
+    margin: 10px auto;
+    line-height: 1.7;
+    font-size: 1.1em;
+}
+
+/* Navigation Buttons */
 nav {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+    gap: 20px;
 }
 
-nav a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
+nav button, .shop-button {
+    background: linear-gradient(145deg, #ffffff, #d4d9f0);
+    border: 2px solid #6a11cb;
+    border-radius: 12px;
+    padding: 12px 25px;
+    cursor: pointer;
     font-weight: 600;
-    font-size: 1rem;
-    padding: 6px 12px;
-    border-radius: 8px;
-    transition: background 0.3s;
+    color: #6a11cb;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
 }
 
-nav a:hover,
-nav a.active {
-    background: rgba(255,255,255,0.2);
+nav button:hover, .shop-button:hover {
+    background: linear-gradient(145deg, #6a11cb, #2575fc);
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* Main Content */
+/* Main Layout */
 main {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Home Section */
-.home-content h2 {
-    color: #4a90e2;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.home-content p {
-    line-height: 1.6;
-    margin-bottom: 16px;
-    font-size: 1rem;
-}
-
-/* Shop Container */
-.shop-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 20px;
+}
+
+/* Category Sections */
+.category-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
     justify-content: center;
 }
 
-/* Product Card */
+/* Souvenir Items */
 .souvenir-item {
-    background: white;
-    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #f1f3f8);
+    border-radius: 20px;
     padding: 20px;
-    width: 280px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    width: 250px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.souvenir-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.souvenir-item:hover::after {
+    left: 125%;
 }
 
 .souvenir-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
-/* Product Image */
+/* Images */
 .souvenir-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .souvenir-item img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-/* Product Info */
+/* Titles and Text */
 .souvenir-item h3 {
-    margin-top: 12px;
-    font-size: 1.2rem;
+    margin: 12px 0 8px;
+    font-size: 1.2em;
     color: #333;
 }
 
 .souvenir-item p {
-    font-size: 0.95rem;
-    color: #555;
     margin: 6px 0;
+    font-size: 0.95em;
+    color: #555;
 }
 
-/* Buttons */
-button {
-    margin-top: 10px;
-    padding: 10px 16px;
-    background: #50c2e9;
+/* Add to Cart Buttons */
+.souvenir-item button {
+    margin-top: 12px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
     font-weight: 600;
-    border: none;
-    border-radius: 10px;
     cursor: pointer;
-    font-size: 0.95rem;
-    transition: background 0.3s, transform 0.2s;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    background: #4a90e2;
-    transform: translateY(-2px);
+.souvenir-item button:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    transform: scale(1.05);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .shop-container {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Modal */
+#itemModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+#itemModal div {
+    background: linear-gradient(145deg, #ffffff, #e9ebf7);
+    margin: 5% auto;
+    padding: 25px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 550px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+#itemModal span {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #6a11cb;
+    font-weight: bold;
+}
+
+#itemModal img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+#itemModal img:hover {
+    transform: scale(1.05);
+}
+
+#itemModal h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+#itemModal p {
+    margin: 6px 0;
+    font-size: 1.1em;
+    color: #555;
 }
