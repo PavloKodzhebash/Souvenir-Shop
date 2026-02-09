@@ -2,82 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Museum Souvenir Shop</title>
+    <title>Heritage Souvenir Shop - Products</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef2f7;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #4a90e2;
+            color: white;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        nav a.active {
+            text-decoration: underline;
+        }
+        .shop-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 30px;
+        }
+        .souvenir-item {
+            background-color: white;
+            border-radius: 12px;
+            padding: 15px;
+            width: 260px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .souvenir-item:hover {
+            transform: scale(1.03);
+        }
+        .souvenir-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 14px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #357abd;
+        }
+        h3 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        p {
+            font-size: 14px;
+            margin: 6px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Museum Souvenir Shop</h1>
+        <h1>Heritage Souvenir Shop</h1>
         <nav>
-            <a href="collections.html">Collections</a>
-            <a href="shop.html" class="active">Shop</a>
             <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
         </nav>
     </header>
 
     <main>
-        <section class="shop-container">
-
-            <!-- Archeology Items -->
+        <div class="shop-container">
+            <!-- Archeology -->
             <div class="souvenir-item">
-                <img src="Archeology/The serent daggre.png" alt="Serpent Dagger" class="product-image" onclick="openModal(this)">
-                <h2>Serpent Dagger</h2>
-                <p>Obsidian blade with a cobra-shaped handle inlaid with emeralds. From Archeology collection. Used for ritual purposes.</p>
-                <span class="price">$120.00</span>
-                <button onclick="addToCart('Serpent Dagger')">Add Serpent Dagger to Cart</button>
+                <img src="Archeology/The serent daggre.png" alt="The Serent Dagger" title="The Serent Dagger">
+                <h3>The Serent Dagger</h3>
+                <p>Collection: Archeology<br>Material: Obsidian & Emerald<br>Purpose: Ritual</p>
+                <p>Price: $129.99</p>
+                <button onclick="alert('Added The Serent Dagger to cart')">Add to Cart</button>
             </div>
 
             <div class="souvenir-item">
-                <img src="Archeology/knife.png" alt="Ancient Knife" class="product-image" onclick="openModal(this)">
-                <h2>Ancient Knife</h2>
-                <p>Bronze knife used in daily and ceremonial life. From Archeology collection.</p>
-                <span class="price">$85.50</span>
-                <button onclick="addToCart('Ancient Knife')">Add Ancient Knife to Cart</button>
+                <img src="Archeology/knife.png" alt="Ancient Knife" title="Ancient Knife">
+                <h3>Ancient Knife</h3>
+                <p>Collection: Archeology<br>Material: Bronze<br>Purpose: Tool</p>
+                <p>Price: $89.99</p>
+                <button onclick="alert('Added Ancient Knife to cart')">Add to Cart</button>
             </div>
 
             <div class="souvenir-item">
-                <img src="Archeology/vase.png" alt="Peace Urn" class="product-image" onclick="openModal(this)">
-                <h2>Peace Urn</h2>
-                <p>Terracotta vase with painted scene of historic leaders' meeting. Fragile and ancient. Archeology collection.</p>
-                <span class="price">$95.00</span>
-                <button onclick="addToCart('Peace Urn')">Add Peace Urn to Cart</button>
+                <img src="Archeology/vase.png" alt="Peace Urn" title="Peace Urn">
+                <h3>Peace Urn</h3>
+                <p>Collection: Archeology<br>Material: Terracotta<br>Purpose: Ceremonial Vessel</p>
+                <p>Price: $149.99</p>
+                <button onclick="alert('Added Peace Urn to cart')">Add to Cart</button>
             </div>
 
-            <!-- Anthropology Items -->
+            <!-- Anthropology -->
             <div class="souvenir-item">
-                <img src="Anthropology/backpack.png" alt="Urban Nomad Backpack" class="product-image" onclick="openModal(this)">
-                <h2>Urban Nomad Backpack</h2>
-                <p>Modern anthropological artifact with patches, camera, and passport. Shows human migration in 21st century.</p>
-                <span class="price">$60.00</span>
-                <button onclick="addToCart('Urban Nomad Backpack')">Add Urban Nomad Backpack to Cart</button>
-            </div>
-
-            <div class="souvenir-item">
-                <img src="Anthropology/map.png" alt="Genealogy Map" class="product-image" onclick="openModal(this)">
-                <h2>Genealogy Map</h2>
-                <p>Ancient parchment showing clan connections and sacred territories. Anthropology collection.</p>
-                <span class="price">$75.00</span>
-                <button onclick="addToCart('Genealogy Map')">Add Genealogy Map to Cart</button>
+                <img src="Anthropology/backpack.png" alt="Urban Nomad Backpack" title="Urban Nomad Backpack">
+                <h3>Urban Nomad Backpack</h3>
+                <p>Collection: Anthropology<br>Material: Textile & Metal<br>Purpose: Modern Artifact</p>
+                <p>Price: $79.99</p>
+                <button onclick="alert('Added Urban Nomad Backpack to cart')">Add to Cart</button>
             </div>
 
             <div class="souvenir-item">
-                <img src="Anthropology/mask.png" alt="Guardian Spirit Mask" class="product-image" onclick="openModal(this)">
-                <h2>Guardian Spirit Mask</h2>
-                <p>Elaborate headdress of feathers, shells, and wood. Used in initiation rituals. Anthropology collection.</p>
-                <span class="price">$110.00</span>
-                <button onclick="addToCart('Guardian Spirit Mask')">Add Guardian Spirit Mask to Cart</button>
+                <img src="Anthropology/map.png" alt="Genealogy Map" title="Genealogy Map">
+                <h3>Genealogy Map</h3>
+                <p>Collection: Anthropology<br>Material: Parchment<br>Purpose: Cultural Navigation</p>
+                <p>Price: $69.99</p>
+                <button onclick="alert('Added Genealogy Map to cart')">Add to Cart</button>
             </div>
 
-        </section>
+            <div class="souvenir-item">
+                <img src="Anthropology/mask.png" alt="Spirit Guardian Mask" title="Spirit Guardian Mask">
+                <h3>Spirit Guardian Mask</h3>
+                <p>Collection: Anthropology<br>Material: Feathers, Shells, Wood<br>Purpose: Ceremonial</p>
+                <p>Price: $119.99</p>
+                <button onclick="alert('Added Spirit Guardian Mask to cart')">Add to Cart</button>
+            </div>
+        </div>
     </main>
-
-    <!-- Modal -->
-    <div id="modal" class="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-img">
-        <div id="caption"></div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
